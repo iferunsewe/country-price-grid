@@ -1,0 +1,11 @@
+{
+  "name": "frontend_kloeckner",
+  "version": "1.0.0",
+  "description": "frontend angular project for kloeckner",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Ife Runsewe",
+  "license": "ISC"
+}

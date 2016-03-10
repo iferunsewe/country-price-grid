@@ -1,0 +1,11 @@
+{
+  "name": "etv-fe-challenge",
+  "description": "Etventure Front End Challenge",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-chart.js": "~0.8.8"
+  }
+}
