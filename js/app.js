@@ -1,1 +1,1 @@
-var app = angular.module('cityPriceApp', ['ngRoute']);
+var app = angular.module('cityPriceApp', ['ngRoute', 'chart.js']);

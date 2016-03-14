@@ -1,0 +1,76 @@
+<div id="city-table">
+    <!--Iterating through the citiesData object and sorting depending on which column header you click on-->
+
+    <div class="table-responsive" ng-controller="cityTableController">
+        <table class="table">
+        <thead>
+        <!--Clickable column headers-->
+        <tr>
+            <th>
+                <a href="#" ng-click="sortType = 'city'; sortReverse = !sortReverse">
+                    City
+                    <span ng-show="sortType == 'city' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'city' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </th>
+            <th>
+                <a href="#" ng-click="sortType = 'startDate'; sortReverse = !sortReverse">
+                    Start date
+                    <span ng-show="sortType == 'startDate' && !sortReverse"
+                          class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'startDate' && sortReverse"
+                          class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <div class='input-group date'>
+                    <input type='text' class="form-control input-group-addon" placeholder="Enter date mm/dd/yyyy" ng-model="pickStartDate"/>
+                </div>
+            </th>
+            <th>
+                <a href="#" ng-click="sortType = 'endDate'; sortReverse = !sortReverse">
+                    End date
+                    <span ng-show="sortType == 'endDate' && !sortReverse"
+                          class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'endDate' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <div class='input-group date''>
+                    <input type='text' class="form-control input-group-addon" placeholder="Enter date mm/dd/yyyy" ng-model="pickEndDate"/>
+                </div>
+            </th>
+            <th>
+                <a href="#" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+                    Price
+                    <span ng-show="sortType == 'price' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'price' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </th>
+            <th>
+                <a href="#" ng-click="sortType = 'status'; sortReverse = !sortReverse">
+                    Status
+                    <span ng-show="sortType == 'status' && !sortReverse"
+                          class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'status' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </th>
+            <th>
+                <a href="#" ng-click="sortType = 'color'; sortReverse = !sortReverse">
+                    Color
+                    <span ng-show="sortType == 'color' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="sortType == 'color' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--Sorting and filtering below-->
+        <tr ng-repeat="data in citiesData | orderBy:sortType:sortReverse | filter:pickStartDate:pickEndDate;">
+            <td>{{data.city}}</td>
+            <td>{{data.start_date}}</td>
+            <td>{{data.end_date | date}}</td>
+            <td>{{data.price | currency:'£'}}</td>
+            <td>{{data.status}}</td>
+            <td>{{data.color}}</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
