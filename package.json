@@ -1,9 +1,17 @@
 {
-  "name": "frontend_kloeckner",
+  "name": "country-price-grid",
   "version": "1.0.0",
-  "description": "frontend angular project for kloeckner",
+  "description": "Practice angular project to show city data",
   "main": "index.js",
+  "repository": {
+  "type": "git",
+  "url": "git@github.com:iferunsewe/country-price-grid.git"
+  },
+  "config" : { 
+    "port" : "8080" 
+  },
   "scripts": {
+    "start": "node server.js",
     "test": "npm test"
   },
   "author": "Ife Runsewe",
